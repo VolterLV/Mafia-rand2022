@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,500,700,800&display=swap);
 
+@import url(https://fonts.googleapis.com/css?family=Macondo:regular&display=swap);
+
+@import url(https://fonts.googleapis.com/css?family=Lobster:regular);
+
 @charset "UTF-8";
 
 * {
@@ -24,7 +28,7 @@ body {
 body {
   color: #000;
   line-height: 1;
-  font-family: ": '";
+  font-family: "Lobster";
   font-size: 1rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -36,7 +40,7 @@ body {
 input,
 button,
 textarea {
-  font-family: ": '";
+  font-family: "Lobster";
   font-size: inherit;
 }
 
@@ -140,7 +144,17 @@ h6 {
 }
 
 .main-button {
-  margin: 5px;
+  margin: 0px 10px 0px 10px;
+  position: relative;
+  padding: 10px 20px 10px 20px;
+  width: 300px;
+  border-radius: 2px;
+  font-size: 2rem;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  /* 	margin: 5px;
   padding: 10px 10px 10px 10px;
   width: 300px;
   background: #111b47;
@@ -150,9 +164,90 @@ h6 {
   text-align: center;
   color: #ffffff;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+  	&:hover {
+  		background: #1e3289;
+  	}
+  }
+  @media (max-width: $tablet) {
+  	font-size: 1.5rem;
+  }
+  @media (max-width: $mobile) {
+  }
+  */
+  /* 	position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #111;
+  text-transform: uppercase;
+  background-color: #fff;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  &::before {
+  	content: '';
+  	position: absolute;
+  	top: 6px;
+  	left: -2px;
+  	width: calc(100% + 4px);
+  	height: calc(100% - 12px);
+  	background: #fff;
+  	transition: 0.5s ease-in-out;
+  	transform: scaleY(1);
+  	transition-delay: 0.5s;
+  }
+  &:hover::before {
+  	transform: scaleY(0);
+  }
+  &::after {
+  	content: '';
+  	position: absolute;
+  	left: 6px;
+  	top: -2px;
+  	height: calc(100% + 4px);
+  	width: calc(100% - 12px);
+  	background: #fff;
+  	transition: 0.5s ease-in-out;
+  	transform: scaleX(1);
+  }
+  &:hover::after {
+  	transform: scaleX(0);
+  }
+  span {
+  	position: relative;
+  	z-index: 3;
+  } */
+}
+
+.main-button::before,
+.main-button::after {
+  content: "";
+  border: 3px solid #fff;
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.main-button:hover::after {
+  -webkit-transform: translate(-5px, -5px);
+      -ms-transform: translate(-5px, -5px);
+          transform: translate(-5px, -5px);
+}
+
+.main-button:hover::before {
+  -webkit-transform: translate(5px, 5px);
+      -ms-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
 }
 
 .main-title {
@@ -245,8 +340,8 @@ h6 {
   z-index: -1;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 105%;
+  min-height: 105%;
 }
 
 .form-number {
@@ -266,6 +361,10 @@ h6 {
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.form-row {
+  margin: 0px 0px 30px 0px;
 }
 
 .main {
@@ -429,7 +528,7 @@ h6 {
 }
 
 .card__main-text span {
-  font: 3em sans-serif;
+  font-size: 3em;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
 }
@@ -577,16 +676,12 @@ h6 {
 }
 
 @media (max-width: 61.99875em) {
-  .main-button {
-    font-size: 1.5rem;
-  }
-
   .main__image:after {
     display: none;
   }
 
   .card__main-text span {
-    font: 2.5em sans-serif;
+    font-size: 2.5em;
   }
 }
 
@@ -647,15 +742,11 @@ h6 {
 }
 
   .card__main-text span {
-    font: 2em sans-serif;
+    font-size: 2em;
   }
 }
 
 @media (any-hover: hover) {
-  .main-button:hover {
-    background: #1e3289;
-  }
-
   .card__item:hover {
     -webkit-transform: perspective(100px) translateZ(5px) scale(1.01) translateX(-10px) translateY(-5px);
             transform: perspective(100px) translateZ(5px) scale(1.01) translateX(-10px) translateY(-5px);

@@ -70,7 +70,7 @@
                     }));
                 };
                 let tooltip = document.getElementById("myTooltip");
-                tooltip.innerHTML = "Cкопировать: " + newmassrand;
+                tooltip.innerHTML = "" + newmassrand;
                 i_new += 1;
             }
             document.querySelector(".card__end").innerHTML = "Веселой вам игры!";
